@@ -42,7 +42,7 @@ foldersRouter
 foldersRouter
   .route("/:folderId")
   .all((req, res, next) => {
-    FoldersService.getById(req.app.get("db"), res.params.folderId)
+    FoldersService.getById(req.app.get("db"), req.params.folderId)
       .then((folder) => {
         if (!folder) {
           return res.status(404).json({
@@ -57,7 +57,7 @@ foldersRouter
   .get((req, res, next) => {
     const knexInstance = req.app.get("db");
     FoldersService.getById(knexInstance, req.params.folderId);
-    res.json(serializeFolder(folder));
+    res.json(serializeFolder(res.folder));
   })
   .delete((req, res, next) => {
     FoldersService.deleteFolder(req.app.get("db"), req.params.folderId)

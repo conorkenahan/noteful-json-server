@@ -2,9 +2,9 @@ const NotesService = {
   getAllNotes(knex) {
     return knex.select("*").from("noteful_notes");
   },
-  insertFolder(knex, newFolder) {
+  insertNote(knex, newNote) {
     return knex
-      .insert(newFolder)
+      .insert(newNote)
       .into("noteful_notes")
       .returning("*")
       .then((rows) => {
@@ -14,10 +14,12 @@ const NotesService = {
   getById(knex, id) {
     return knex.from("noteful_notes").select("*").where("id", id).first();
   },
-  deleteArticle(knex, id) {
+  deleteNote(knex, id) {
     return knex("noteful_notes").where({ id }).delete();
   },
-  updateArticle(knex, id, newArticleFields) {
-    return knex("noteful_notes").where({ id }).update(newArticleFields);
+  updateNote(knex, id, newNoteFields) {
+    return knex("noteful_notes").where({ id }).update(newNoteFields);
   },
 };
+
+module.exports = NotesService;

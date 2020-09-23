@@ -29,3 +29,7 @@ For example:
 To start the server, run `npm start`.
 
 The database is initiated from the `db.js` file whenever the server is started. No data is persisted after the server has been shut down.
+
+run
+psql -U dunder_mifflin -d noteful -f ./seeds/seed.noteful.sql
+to seed databases
