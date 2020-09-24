@@ -9,4 +9,4 @@ INSERT INTO noteful_notes (title, content, folderId)
 VALUES
 ('Note 1', 'this is note 1', '1'),
 ('Note 2', 'this is note 2', '2'),
-('Note 3', 'this is note 3',);
+('Note 3', 'this is note 3', '1');
