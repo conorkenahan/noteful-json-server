@@ -11,7 +11,8 @@
     "migrate:production": "env SSL=true DATABASE_URL=$(postgres://cowkglgidtgkhu:a8451a341a6d94834d892fbe6a185bb943f925f6bd1482589b0a20841c61346a@ec2-54-161-58-21.compute-1.amazonaws.com:5432/d7u5hnfhfb7amm) npm run migrate",
     "start": "node src/server.js",
     "predeploy": "npm audit && npm run migrate:production",
-    "deploy": "git push heroku master"
+    "deploy": "git push heroku master",
+    "postdeploy": "npm run migrate:production"
   },
   "author": "Thomas `tomatao` Hudspith-Tatham <iammotivated@gmail.com>",
   "license": "MIT",
