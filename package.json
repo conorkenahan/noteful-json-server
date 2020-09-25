@@ -13,7 +13,7 @@
     "deploy": "git push heroku master",
     "postdeploy": "npm run migrate:production"
   },
-  "author": "Thomas `tomatao` Hudspith-Tatham <iammotivated@gmail.com>",
+  "author": "Conor Kenahan",
   "license": "MIT",
   "dependencies": {
     "chai": "^4.2.0",
