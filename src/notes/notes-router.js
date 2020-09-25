@@ -11,7 +11,7 @@ const serializeNote = (note) => ({
   id: note.id,
   title: xss(note.title),
   content: xss(note.content),
-  folderId: note.folderId,
+  folderId: note.folderid,
   modified: note.modified,
 });
 
@@ -26,7 +26,7 @@ notesRouter
   })
   .post(jsonParser, (req, res, next) => {
     const { title, folderId, content } = req.body;
-    const newNote = { title, folderId, content };
+    const newNote = { title, folderid: folderId, content };
 
     for (const [key, value] of Object.entries(newNote))
       if (value == null) {
@@ -75,7 +75,7 @@ notesRouter
   })
   .patch(jsonParser, (req, res, next) => {
     const { title, content, folderId } = req.body;
-    const noteToUpdate = { title, content, folderId };
+    const noteToUpdate = { title, content, folderid: folderId };
 
     const numberOfValues = Object.values(noteToUpdate).filter(Boolean).length;
     if (!title) {

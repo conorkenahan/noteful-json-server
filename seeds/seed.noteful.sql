@@ -5,7 +5,7 @@ VALUES
 ('Folder 3');
 
 
-INSERT INTO noteful_notes (title, content, folderId)
+INSERT INTO noteful_notes (title, content, folderid)
 VALUES
 ('Note 1', 'this is note 1', '1'),
 ('Note 2', 'this is note 2', '2'),
