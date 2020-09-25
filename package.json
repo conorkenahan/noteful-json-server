@@ -29,9 +29,7 @@
     "pg": "^8.3.3",
     "postgrator": "^4.0.1",
     "supertest": "^4.0.2",
-    "xss": "^1.0.8"
-  },
-  "devDependencies": {
+    "xss": "^1.0.8",
     "postgrator-cli": "^3.2.0"
   }
 }
